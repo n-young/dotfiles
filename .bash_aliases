@@ -1,0 +1,8 @@
+alias please='sudo !!'
+alias ls='ls --color'
+alias ll='ls --color -l'
+alias gits='git status'
+alias gitac='git add . && git commit -m '
+alias gitps='git push'
+alias gitpl='git pull'
+alias brown='ssh nyoung10@ssh.cs.brown.edu'
