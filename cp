@@ -3,7 +3,7 @@
 declare -a DotFiles=(
 ".bash_aliases"
 ".tmux.conf"
-".vim"
+".vimrc"
 )
 
 for f in ${DotFiles[@]}; do
