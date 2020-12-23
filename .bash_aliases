@@ -1,3 +1,4 @@
+alias ..='cd ..'
 alias please='sudo !!'
 alias ls='ls --color'
 alias ll='ls --color -l'

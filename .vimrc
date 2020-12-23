@@ -4,27 +4,28 @@ call plug#begin('~/.vim/plugged')
 " Theme
 Plug 'sickill/vim-monokai'
 
-" Bottom line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Nerdtree and Nerdcommenter
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-
 " Language Plugins
+Plug 'zxqfl/tabnine-vim'
+Plug 'scrooloose/syntastic'
 Plug 'plasticboy/vim-markdown'
-Plug 'mattn/emmet-vim'
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'elzr/vim-json'
 
-" Misc.
+" Nerdtree
+Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" UI
 Plug 'gorodinskiy/vim-coloresque'
-Plug 'tpope/vim-sensible'
+Plug 'frazrepo/vim-rainbow'
+Plug 'itchyny/lightline.vim'
+
+" Navigation and editing
+Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'christoomey/vim-tmux-navigator'
+
+" Misc.
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 
@@ -33,6 +34,7 @@ call plug#end()
 
 " Quality of life changes
 syntax on
+set background=dark
 colorscheme monokai
 set whichwrap+=<,>,[,]
 
@@ -51,8 +53,9 @@ set relativenumber
 set numberwidth=5
 set noerrorbells
 set mouse=a
-set list listchars=tab:»·,trail:·,nbsp:·
 set nojoinspaces
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 " Misc.
 set backspace=indent,eol,start
@@ -60,4 +63,20 @@ set confirm
 
 " NERD Tree
 autocmd vimenter * NERDTree
+let NERDTreeShowHidden=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd VimEnter * wincmd p
+nmap <C-b> :NERDTreeToggle<CR>
+
+" Lightline
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
+" Rainbow Parens
+let g:rainbow_active = 1
+
+" VCM
+autocmd FileType vim let b:vcm_tab_complete = 'vim'
 
