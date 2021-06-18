@@ -1,6 +1,7 @@
 #!/bin/bash
 
 declare -a DotFiles=(
+".bashrc"
 ".bash_aliases"
 ".tmux.conf"
 ".vimrc"
