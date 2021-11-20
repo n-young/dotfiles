@@ -29,7 +29,6 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Misc.
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 
 call plug#end()

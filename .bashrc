@@ -160,6 +160,10 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
       exec tmux
 fi
 
+# Go stuff
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
+
+# Starship
+eval "$(starship init bash)"
 
