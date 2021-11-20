@@ -1,0 +1,8 @@
+gpg --keyserver pool.sks-keyservers.net --recv-keys <key>
+xsetwacom set 18 Area 2565 1442 9771 6167
+pacman -Qqet
+/usr/share/X11/locale/en_US.UTF-8
+htop
+stacer
+dconf > org > gnome > desktop > interface > text-scaling
+sudo modprobe -r psmouse
