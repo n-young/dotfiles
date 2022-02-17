@@ -167,3 +167,8 @@ export PATH=$PATH:$GOPATH/bin
 # Starship
 eval "$(starship init bash)"
 
+# Git autocomplete
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
